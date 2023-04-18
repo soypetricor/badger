@@ -5,9 +5,10 @@ import {
 	Route,
 	Link
   } from "react-router-dom";
-  import { Title, Navbar } from './components'
+  import { Navbar } from './components'
 
   import Home from './pages/home'
+  import CreateForm from './pages/CreateForm'
 
   export default function Router() {
 	return (
@@ -16,6 +17,7 @@ import {
 			<Navbar>
 				<Routes>
 					<Route path='/home' element={<Home />} />
+					<Route path='/create-badge' element={<CreateForm />} />
 				</Routes>
 			</Navbar>
 		</BrowserRouter>

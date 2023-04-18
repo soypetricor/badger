@@ -1,12 +1,17 @@
 import React from 'react'
 import { Layout, Menu } from 'antd';
 import { Link} from 'react-router-dom'
+import { Menu1 } from '../../components'
 
 const { Header} = Layout;
 export default function HeadersComponent(props)  {
     const routes = [
         {
             key: 1,
+            label: <Menu1/>,
+        },
+        {
+            key: 2,
             label: <Link to='/home'>Tu colección</Link>,
         },
     ]
