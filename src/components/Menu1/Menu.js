@@ -2,6 +2,7 @@ import React from 'react';
 import { MenuOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { useState } from 'react';
+import { Link} from 'react-router-dom'
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -13,7 +14,7 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
   getItem('', 'sub1', <MenuOutlined style={{color: '#CEFB3E' }} />, [
-    getItem('Crear', '1'),
+    getItem(<Link to='/create-badge'>Crear</Link>, '1'),
     getItem('Editar perfil', '2'),
   ]),
 ];

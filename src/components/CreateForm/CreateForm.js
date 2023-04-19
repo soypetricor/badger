@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './InputStyle.css'
 
-function App() {
-    return (
-      <div className="App">
-          Hola form
-      </div>
-    );
+function Form() {
+  const [valor, setValor] = useState('');
+
+  const handleChange = (event) => {
+    setValor(event.target.value);
+  }
+
+  return (
+    <div>
+      <label htmlFor="mi-input"></label>
+      <input 
+        id="mi-input"
+        type="text"
+        value={valor}
+        onChange={handleChange}
+        placeholder='Nombre del Badge'
+        className='input-style'
+        />
+    </div>
+  );
   }
   
-  export default App;
+  export default Form;
