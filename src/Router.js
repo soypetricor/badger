@@ -16,7 +16,7 @@ import {
 		<BrowserRouter>
 			<Navbar>
 				<Routes>
-					<Route path='/home' element={<Home />} />
+					<Route path='/' element={<Home />} />
 					<Route path='/create-badge' element={<CreateForm />} />
 				</Routes>
 			</Navbar>

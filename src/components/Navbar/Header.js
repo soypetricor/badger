@@ -10,10 +10,6 @@ export default function HeadersComponent(props)  {
             key: 1,
             label: <Menu1/>,
         },
-        {
-            key: 2,
-            label: <Link to='/home'>Tu colección</Link>,
-        },
     ]
     return (
             <Header
