@@ -12,6 +12,7 @@ const initialForm ={
 }
 function Form() {
   const [form, setForm] = useState(initialForm);
+  const [image, setImage] = useState(null);
 
   const handleChange = (e) => {
     setForm({
@@ -21,12 +22,40 @@ function Form() {
     console.log(form)
   }
 
+  const handleImageChange = (e) => {
+    const reader = new FileReader();
+    const file = e.target.files[0];
+    reader.readAsDataURL(file);
+
+    reader.onloadend = () => {
+      setImage({
+        url: URL.createObjectURL(file),
+        base64: reader.result,
+      });
+      console.log(image)
+    };
+  };
+
   return (
     <>
     <div align="center">
     <h1 className='name-style'>Crea tu Badge</h1>
     </div>
-    
+    <div align="center" className="container">
+    {image && (
+      <img src={image.url} alt="preview" className="image-preview" />
+    )}
+    <label htmlFor="image" className="custom-file-upload">
+    <i className="fa fa-cloud-upload"></i> Añadir imagen
+    </label>
+    <input 
+      id="image"
+      type="file"
+      accept="image/*"
+      onChange={handleImageChange}
+      style={{ display: 'none' }}
+    />
+    </div>
     <div align="center" className="container">
       <input 
         id="name"

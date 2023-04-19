@@ -4,16 +4,49 @@
 
 .input-style {
     padding: 10px;
-    border: 1px solid #CEFB3E;
+    border: 2px solid #CEFB3E;
     border-radius: 10px;
     font-size: 16px;
-    background-color: #2F2F30;
+    background-color: transparent;
     color: #ffffff;
-    outline-color: #CEFB3E;
     width: 500px;
     display: block;
+}
+
+.input-style:hover{
+    border: 2px solid #ffffff;
 }
 
 .name-style {
     font-size: 25px;
 }
+.image-preview {
+    padding: 15px;
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px solid #CEFB3E;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.custom-file-upload {
+    border: 1px solid #CEFB3E;
+    display: inline-block;
+    padding: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    background-color: #CEFB3E;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #1C1C1E;
+    color: #ffffff;
+  }
+  
+  .custom-file-upload i {
+    margin-right: 5px;
+  }
