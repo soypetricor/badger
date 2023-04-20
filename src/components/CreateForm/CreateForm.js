@@ -52,10 +52,10 @@ function Form() {
   };
   const handleSave = (e) => {
     e.preventDefault();
-    const hasError = Object.values(form).some((value) => value.trim() === "");
+    const hasError = Object.values(form).some((value) => value.trim() === '');
     if (hasError) {
       for (const key in form) {
-        if (typeof form[key] === "string" && form[key].trim() === "") {
+        if (typeof form[key] === 'string' && form[key].trim() === '') {
           errorInputs[key] = true;
         }
       }
@@ -66,7 +66,7 @@ function Form() {
       });
     } else {
       // acá guardo
-      console.log("Datos guardados");
+      console.log('Datos guardados');
       setShowModal(true);
     }
     console.log(errorInputs)
@@ -95,20 +95,24 @@ function Form() {
         <div className='info-container'>
         <div className='left-info'>
         <p className='badger-subtitle'>Especialidad:</p>
-        <p>{form.specialty}</p>
+        <p className='badger-text'>{form.specialty}</p>
         <p className='badger-subtitle'>Conocimientos:</p>
-        <p>{form.knowledge}</p>
+        <p className='badger-text'>{form.knowledge}</p>
         </div>
         <div className='rigth-info'>
         <p className='badger-subtitle'>Habilidades:</p>
-        <p>{form.skills}</p>
+        <p className='badger-text'>{form.skills}</p>
         <p className='badger-subtitle'>Criterios:</p>
-        <p>{form.criteria}</p>
+        <p className='badger-text'>{form.criteria}</p>
         </div>
         </div>
       </div>
       </div>
-      <button onClick={() => setShowModal(false)} className='modal-button'>Cerrar</button>
+      <div align='center'>
+      <button onClick={() => navigate('/')} className='modal-button' align='left'>Volver al inicio</button>
+      <button onClick={() => navigate('/sign-badge')} className='modal-button' align='center'>Firmar</button>
+      <button onClick={() => setShowModal(false)} className='modal-button' align='right'>Editar</button>
+      </div>
     </Modal>
   )}
     <div align='center'>
@@ -136,7 +140,7 @@ function Form() {
         value={form.name}
         onChange={handleChange}
         placeholder='Nombre del Badge'
-        className={`input-style ${form.error?.name && "error"}`}
+        className={`input-style ${form.error?.name && 'error'}`}
         />
     </div>
     <div align='center' className='container'>
@@ -146,7 +150,7 @@ function Form() {
         value={form.specialty}
         onChange={handleChange}
         placeholder='Especialidad'
-        className={`input-style ${form.error?.specialty && "error"}`}
+        className={`input-style ${form.error?.specialty && 'error'}`}
         />
     </div>
     <div align='center' className='container'>
@@ -156,7 +160,7 @@ function Form() {
         value={form.platform}
         onChange={handleChange}
         placeholder='Plataforma/ evento'
-        className={`input-style ${form.error?.platform && "error"}`}
+        className={`input-style ${form.error?.platform && 'error'}`}
         />
     </div>
     <div align='center' className='container'>
@@ -166,7 +170,7 @@ function Form() {
         value={form.generation}
         onChange={handleChange}
         placeholder='Generación/ versión'
-        className={`input-style ${form.error?.generation && "error"}`}
+        className={`input-style ${form.error?.generation && 'error'}`}
         />
     </div>
     <div align='center' className='container'>
@@ -176,7 +180,7 @@ function Form() {
         value={form.criteria}
         onChange={handleChange}
         placeholder='Criterios evaluativos'
-        className={`input-style ${form.error?.criteria && "error"}`}
+        className={`input-style ${form.error?.criteria && 'error'}`}
         />
     </div>
     <div align='center' className='container'>
@@ -186,7 +190,7 @@ function Form() {
         value={form.knowledge}
         onChange={handleChange}
         placeholder='Conocimientos'
-        className={`input-style ${form.error?.knowledge && "error"}`}
+        className={`input-style ${form.error?.knowledge && 'error'}`}
         />
     </div>
     <div align='center' className='container'>
@@ -196,7 +200,7 @@ function Form() {
         value={form.skills}
         onChange={handleChange}
         placeholder='Habilidades'
-        className={`input-style ${form.error?.skills && "error"}`}
+        className={`input-style ${form.error?.skills && 'error'}`}
         />
     </div>
     <div align='center' className='container'>

@@ -9,6 +9,7 @@ import {
 
   import Home from './pages/home'
   import CreateForm from './pages/CreateForm'
+  import SignBadge from './pages/SignBadge'
 
   export default function Router() {
 	return (
@@ -18,6 +19,7 @@ import {
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/create-badge' element={<CreateForm />} />
+					<Route path='/sign-badge' element={<SignBadge />} />
 				</Routes>
 			</Navbar>
 		</BrowserRouter>
