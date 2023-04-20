@@ -46,7 +46,36 @@
     background-color: #1C1C1E;
     color: #ffffff;
   }
-  
-  .custom-file-upload i {
-    margin-right: 5px;
+
+  .button-save {
+    border: 2px solid #CEFB3E;
+    padding: 9px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    background-color: #CEFB3E;
+    width: 150px;
+  }
+  .button-save:hover {
+    background-color: #1C1C1E;
+    color: #ffffff;
+  }
+
+  .button-cancel {
+    border: 2px solid #CEFB3E;
+    padding: 9px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-right: 100px;
+    width: 150px;
+  }
+  .button-cancel:hover {
+    color: #fb3e3e;
+    border: 2px solid #fb3e3e;
   }

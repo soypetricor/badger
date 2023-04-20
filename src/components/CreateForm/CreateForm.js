@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Style.css'
+import { useNavigate } from 'react-router';
 
 const initialForm ={
   name: '',
@@ -13,6 +14,7 @@ const initialForm ={
 function Form() {
   const [form, setForm] = useState(initialForm);
   const [image, setImage] = useState(null);
+  let navigate = useNavigate()
 
   const handleChange = (e) => {
     setForm({
@@ -35,6 +37,13 @@ function Form() {
       console.log(image)
     };
   };
+  const handleSave = () => {
+    // Aquí va el código para guardar
+    console.log(form, image);
+  }
+  const handleCancel = () => {
+    navigate('/')
+  }
 
   return (
     <>
@@ -125,6 +134,10 @@ function Form() {
         placeholder='Habilidades'
         className='input-style'
         />
+    </div>
+    <div align='center' className='container'>
+    <button onClick={handleCancel} className='button-cancel'>Cancelar</button>
+    <button onClick={handleSave} className='button-save'>Guardar</button>
     </div>
     </>
   );
