@@ -24,6 +24,7 @@ function Form() {
     console.log(form, image)
   }
 
+  const errorInputs = {};
   const handleImageChange = (e) => {
     const reader = new FileReader();
     const file = e.target.files[0];
@@ -37,9 +38,24 @@ function Form() {
       console.log(image)
     };
   };
-  const handleSave = () => {
-    // Aquí va el código para guardar
-    console.log(form, image);
+  const handleSave = (e) => {
+    e.preventDefault();
+    const hasError = Object.values(form).some((value) => value.trim() === "");
+    if (hasError) {
+      for (const key in form) {
+        if (typeof form[key] === "string" && form[key].trim() === "") {
+          errorInputs[key] = true;
+        }
+      }
+      setForm({
+        ...form,
+        error: errorInputs,
+      });
+    } else {
+      // acá guardo
+      console.log("Datos guardados");
+    }
+    console.log(errorInputs)
   }
   const handleCancel = () => {
     navigate('/')
@@ -72,7 +88,7 @@ function Form() {
         value={form.name}
         onChange={handleChange}
         placeholder='Nombre del Badge'
-        className='input-style'
+        className={`input-style ${form.error?.name && "error"}`}
         />
     </div>
     <div align='center' className='container'>
@@ -82,7 +98,7 @@ function Form() {
         value={form.specialty}
         onChange={handleChange}
         placeholder='Especialidad'
-        className='input-style'
+        className={`input-style ${form.error?.specialty && "error"}`}
         />
     </div>
     <div align='center' className='container'>
@@ -92,7 +108,7 @@ function Form() {
         value={form.platform}
         onChange={handleChange}
         placeholder='Plataforma/ evento'
-        className='input-style'
+        className={`input-style ${form.error?.platform && "error"}`}
         />
     </div>
     <div align='center' className='container'>
@@ -102,7 +118,7 @@ function Form() {
         value={form.generation}
         onChange={handleChange}
         placeholder='Generación/ versión'
-        className='input-style'
+        className={`input-style ${form.error?.generation && "error"}`}
         />
     </div>
     <div align='center' className='container'>
@@ -112,7 +128,7 @@ function Form() {
         value={form.criteria}
         onChange={handleChange}
         placeholder='Criterios evaluativos'
-        className='input-style'
+        className={`input-style ${form.error?.criteria && "error"}`}
         />
     </div>
     <div align='center' className='container'>
@@ -122,7 +138,7 @@ function Form() {
         value={form.knowledge}
         onChange={handleChange}
         placeholder='Conocimientos'
-        className='input-style'
+        className={`input-style ${form.error?.knowledge && "error"}`}
         />
     </div>
     <div align='center' className='container'>
@@ -132,7 +148,7 @@ function Form() {
         value={form.skills}
         onChange={handleChange}
         placeholder='Habilidades'
-        className='input-style'
+        className={`input-style ${form.error?.skills && "error"}`}
         />
     </div>
     <div align='center' className='container'>
