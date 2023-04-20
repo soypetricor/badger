@@ -29,9 +29,15 @@ function Form() {
   }
 
   const handleChange = (e) => {
+    for (const key in form) {
+      if (errorInputs[key] == true) {
+        errorInputs[key] = false;
+      }
+    }
     setForm({
       ...form,
       [e.target.id]:e.target.value,
+      error: errorInputs,
     })
     console.log(form, image)
   }
@@ -52,11 +58,15 @@ function Form() {
   };
   const handleSave = (e) => {
     e.preventDefault();
-    const hasError = Object.values(form).some((value) => value.trim() === '');
+    const addImageButton = document.getElementById('add-image-button')
+    const hasError = Object.values(form).some((value) => String(value).trim() === '');
     if (hasError) {
       for (const key in form) {
         if (typeof form[key] === 'string' && form[key].trim() === '') {
           errorInputs[key] = true;
+        }
+        if (!image) {
+          addImageButton.classList.add('image-error');
         }
       }
       alert('Por favor, rellena todos los campos')
@@ -122,7 +132,7 @@ function Form() {
     {image && (
       <img src={image.url} alt='preview' className='image-preview' />
     )}
-    <label htmlFor='image' className='custom-file-upload'>
+    <label htmlFor='image' id='add-image-button' className='custom-file-upload'>
     <i className='fa fa-cloud-upload'></i> Añadir imagen
     </label>
     <input 

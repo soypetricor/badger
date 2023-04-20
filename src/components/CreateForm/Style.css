@@ -50,6 +50,12 @@
     color: #ffffff;
   }
 
+  .image-error {
+    background-color: transparent;
+    color: #fb3e3e;
+    border: 1px solid #fb3e3e;
+  } 
+
   .button-save {
     border: 2px solid #CEFB3E;
     padding: 9px;
