@@ -1,6 +1,9 @@
 .container {
     margin-bottom: 20px;
 }
+.container-form {
+  margin-bottom: 30px;
+}
 
 .input-style {
     padding: 10px;
@@ -82,4 +85,130 @@
 
   .error {
     border: 2px solid #fb3e3e;
+  }
+  .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10%;
+    left: 22%;
+    right: 0;
+    bottom: 0;
+    background-color: #1C1C1E;
+    z-index: 100;
+    width: 700px;
+    height: 500px;
+    border: 3px solid #CEFB3E;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  .modal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+    background-color: #1C1C1E;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-image {
+    flex: 1;
+    margin: 20px;
+    width: 150px;
+  }
+
+  .modal-form {
+    flex: 1;
+  }
+
+  .modal-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #CEFB3E;
+  }
+
+  .modal-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .modal-button:hover {
+    background-color: #3e8e41;
+  }
+
+  .modal-card {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .divider-style {
+    border-left: 1px solid #CEFB3E;
+    height: 250px;
+    left: 50%;
+    margin: 4px;
+    margin-right: 16px;
+    top: 0;
+  }
+
+  .badger-name {
+    font-size:25px;
+    text-align: center;
+    font-family: verdana;
+    line-height: 0px;
+  }
+
+  .badger-gen {
+    font-size: 12px;
+    line-height: 0px;
+    text-align: center;
+    font-family: verdana;
+  }
+  .badger-platform {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 0px;
+    text-align: center;
+    font-family: verdana;
+    color: #CEFB3E;
+  }
+  .badger-subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 3px;
+    text-align: left;
+    font-family: verdana;
+    color: #CEFB3E;
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top center;
+  }
+
+  .left-info {
+    flex: 1;
+    width: 100px;
+    margin-right: 10px;
+  }
+  .rigth-info{
+    flex: 1;
+    width: 100px;
+    position: right;
   }

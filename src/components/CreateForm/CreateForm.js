@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './Style.css'
 import { useNavigate } from 'react-router';
+import { ReactDOM } from 'react';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 const initialForm ={
   name: '',
@@ -14,7 +18,15 @@ const initialForm ={
 function Form() {
   const [form, setForm] = useState(initialForm);
   const [image, setImage] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   let navigate = useNavigate()
+
+  function openModal() {
+    if(showModal === true){
+      
+    }
+  }
 
   const handleChange = (e) => {
     setForm({
@@ -47,6 +59,7 @@ function Form() {
           errorInputs[key] = true;
         }
       }
+      alert('Por favor, rellena todos los campos')
       setForm({
         ...form,
         error: errorInputs,
@@ -54,15 +67,50 @@ function Form() {
     } else {
       // acá guardo
       console.log("Datos guardados");
+      setShowModal(true);
     }
     console.log(errorInputs)
   }
+
   const handleCancel = () => {
     navigate('/')
   }
 
   return (
     <>
+      {showModal && (
+    <Modal isOpen={showModal} className='modal'>
+      <h1 className='modal-title' >Este es tu Badge</h1>
+      <div className='modal-card modal-container'>
+      <div align='left'>
+      <img src={image.url} alt='preview' className='modal-image' />
+      </div>
+      <div className="divider-style"></div>
+      <div className='modal-form'>
+        <div className='container-form'>
+        <p className='badger-name'>{form.name}</p>
+        <p className='badger-gen'>{form.generation}</p>
+        <p className='badger-platform'>{form.platform}</p>
+        </div>
+        <div className='info-container'>
+        <div className='left-info'>
+        <p className='badger-subtitle'>Especialidad:</p>
+        <p>{form.specialty}</p>
+        <p className='badger-subtitle'>Conocimientos:</p>
+        <p>{form.knowledge}</p>
+        </div>
+        <div className='rigth-info'>
+        <p className='badger-subtitle'>Habilidades:</p>
+        <p>{form.skills}</p>
+        <p className='badger-subtitle'>Criterios:</p>
+        <p>{form.criteria}</p>
+        </div>
+        </div>
+      </div>
+      </div>
+      <button onClick={() => setShowModal(false)} className='modal-button'>Cerrar</button>
+    </Modal>
+  )}
     <div align='center'>
     <h1 className='name-style'>Crea tu Badge</h1>
     </div>
