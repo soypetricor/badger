@@ -14,6 +14,7 @@
     color: #ffffff;
     width: 500px;
     display: block;
+    font-family: Verdana;
 }
 
 .input-style:hover{
@@ -25,12 +26,13 @@
 }
 .image-preview {
     padding: 15px;
-    max-width: 200px;
-    max-height: 200px;
+    width: 200px;
+    height: 200px;
     border: 2px solid #CEFB3E;
     border-radius: 10px;
     margin-bottom: 15px;
     display: block;
+    margin-right: 100px;
 }
 
 .custom-file-upload {
@@ -139,6 +141,16 @@
     font-weight: bold;
     margin-bottom: 20px;
     color: #CEFB3E;
+  }
+
+  .image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 250px;
+    background-color: transparent;
+    margin-left: 30%;
   }
 
   .modal-button {

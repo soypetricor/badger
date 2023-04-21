@@ -6,6 +6,8 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
+const defaultImage = 'https://i.postimg.cc/BbsRxMFz/Dise-o-sin-t-tulo-12.png'
+
 const initialForm ={
   name: '',
   specialty: '',
@@ -128,10 +130,8 @@ function Form() {
     <div align='center'>
     <h1 className='name-style'>Crea tu Badge</h1>
     </div>
-    <div align='center' className='container'>
-    {image && (
-      <img src={image.url} alt='preview' className='image-preview' />
-    )}
+    <div className='image-container' align='center'>
+    <img src={image?.url ?? defaultImage} alt='preview' className='image-preview' />
     <label htmlFor='image' id='add-image-button' className='custom-file-upload'>
     <i className='fa fa-cloud-upload'></i> Añadir imagen
     </label>
@@ -184,32 +184,41 @@ function Form() {
         />
     </div>
     <div align='center' className='container'>
-      <input 
+      <textarea 
         id='criteria'
         type='text'
         value={form.criteria}
         onChange={handleChange}
+        style={{
+          height: 100,
+        }}
         placeholder='Criterios evaluativos'
         className={`input-style ${form.error?.criteria && 'error'}`}
         />
     </div>
     <div align='center' className='container'>
-      <input 
+      <textarea 
         id='knowledge'
         type='text'
         value={form.knowledge}
         onChange={handleChange}
-        placeholder='Conocimientos'
+        style={{
+          height: 100,
+        }}
+        placeholder='Conocimientos (separados por comas)'
         className={`input-style ${form.error?.knowledge && 'error'}`}
         />
     </div>
     <div align='center' className='container'>
-      <input 
+      <textarea 
         id='skills'
         type='text'
         value={form.skills}
         onChange={handleChange}
-        placeholder='Habilidades'
+        style={{
+          height: 100,
+        }}
+        placeholder='Habilidades (separadas por comas)'
         className={`input-style ${form.error?.skills && 'error'}`}
         />
     </div>
