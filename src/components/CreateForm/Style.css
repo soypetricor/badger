@@ -114,6 +114,26 @@
     border-radius: 25px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
   }
+  .modal-cancel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10%;
+    left: 34%;
+    right: 0;
+    bottom: 0;
+    background-color: #1C1C1E;
+    z-index: 100;
+    width: 400px;
+    height: 300px;
+    padding: 12px;
+    padding-bottom: 30px;
+    border: 3px solid #CEFB3E;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
   .modal-container {
     display: flex;
     flex-direction: row;
@@ -171,6 +191,25 @@
     background-color: #CEFB3E;
     color: #1C1C1E;
     border: 1px solid #CEFB3E;
+  }
+
+  .modal-button-cancel {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1C1C1E;
+    color: #ffffff;
+    border: 1px solid #CEFB3E;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 30px;
+  }
+  .modal-button-cancel:hover {
+    background-color: #fb3e3e;
+    border: 2px solid #fb3e3e;
   }
 
   .modal-card {

@@ -21,6 +21,7 @@ function Form() {
   const [form, setForm] = useState(initialForm);
   const [image, setImage] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [showSecondModal, setShowSecondModal] = useState(false);
 
   let navigate = useNavigate()
 
@@ -85,7 +86,7 @@ function Form() {
   }
 
   const handleCancel = () => {
-    navigate('/')
+    setShowSecondModal(true);
   }
 
   return (
@@ -127,6 +128,19 @@ function Form() {
       </div>
     </Modal>
   )}
+  {showSecondModal && (
+  <Modal isOpen={showSecondModal} className='modal-cancel'>
+    <div align='center'>
+    <h1>¡Cuidado!</h1>
+    <p>Estás por cancelar la creación de este Badge, no podrás recuperar la información que has guardado aquí</p>
+    <p>¿Aún quieres cancelar?</p>
+    </div>
+    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
+  <button onClick={() => navigate('/')} className='modal-button-cancel'>Sí, cancelar</button>
+  <button onClick={() => setShowSecondModal(false)} className='modal-button'>Continuar creando</button>
+</div>
+  </Modal>
+)}
     <div align='center'>
     <h1 className='name-style'>Crea tu Badge</h1>
     </div>
