@@ -10,6 +10,7 @@ import {
   import Home from './pages/home'
   import CreateForm from './pages/CreateForm'
   import SignBadge from './pages/SignBadge'
+  import EditProfile from './pages/EditProfile'
 
   export default function Router() {
 	return (
@@ -20,6 +21,7 @@ import {
 					<Route path='/' element={<Home />} />
 					<Route path='/create-badge' element={<CreateForm />} />
 					<Route path='/sign-badge' element={<SignBadge />} />
+					<Route path='/edit-profile' element={<EditProfile />} />
 				</Routes>
 			</Navbar>
 		</BrowserRouter>

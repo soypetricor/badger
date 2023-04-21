@@ -1,0 +1,40 @@
+.menu {
+    display: none;
+  }
+
+.menu-open {
+    display: block;
+    color: #fff;
+    background-color: #1C1C1E;
+    width: 150px;
+    height: 100px;
+    border-radius: 15px;
+  }
+
+.item{
+    color: #fff;
+    background-color: #1C1C1E;
+    height: 40px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item:hover{
+    background-color: #CEFB3E;
+    color: #1C1C1E;
+    border-radius: 15px;
+}
+
+.icono{
+    height: 28px;
+    background-color: transparent;
+    margin-bottom: -15px;
+}
+
+.menu-button{
+    background-color: transparent;
+    justify-content: center;
+    border: none;
+    height: 50px;
+}
