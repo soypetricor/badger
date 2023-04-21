@@ -2,7 +2,6 @@ import React from 'react'
 import { Layout } from 'antd';
 import HeadersComponent from './Header'
 import ContentComponent from './Content'
-import './Style.css'
 
 export default function Navbar(props)  {
 
